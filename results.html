@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}RESULT OF LOK SHABHA ELECTION{% endblock %}
+{% block content %}
+
+    <h2>Current Results:</h2>
+    <center><ul>
+    {% for candidate, votes in results %}
+        <li>{{ candidate }}: {{ votes }} vote(s)</li>
+    {% endfor %}
+    </ul>
+    <p><a href="{{ url_for('vote') }}">Back to Voting</a></p>
+    <p><a href="{{ url_for('logout') }}">Logout</a></p></center>
+    <style>
+      body {
+        background: linear-gradient(45deg, #b57bee, #00e3fd);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    </style>
+{% endblock %}
